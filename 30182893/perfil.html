@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhonatan Homsany</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 310px 2fr;
+            overflow-y: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+    
+        #ImagenPerfil{
+            grid-column: 1;
+            border-radius: 20% 0% 0% 0%;
+        }
+    
+        .UserInfo{
+            grid-column: 2;
+            display: inline-flex;
+            flex-direction: column;
+            height: 300px;
+            width: 90%;
+            border-style: solid;
+            border-color: black;
+            border-width: 3px;
+            box-shadow: 10px 10px 10px 0;
+            padding-left: 5px;
+        }
+    
+        .Nombre{
+            color: red;
+            height: 1px;
+        }
+    
+        #Descripcion{
+            font-style: italic;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+    
+        #Lenguajes{
+            font-weight: bold;
+        }
+    
+        a{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <img id="ImagenPerfil" src="30182893.jpeg" alt="Foto de perfil" width="300" height="306">

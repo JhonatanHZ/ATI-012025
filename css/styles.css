@@ -1,0 +1,107 @@
+#Perfil {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 310px 2fr;
+    overflow-y: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#ImagenPerfil{
+    grid-column: 1;
+    border-radius: 20% 0% 0% 0%;
+}
+
+.UserInfo{
+    grid-column: 2;
+    display: inline-flex;
+    flex-direction: column;
+    height: 300px;
+    width: 90%;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    box-shadow: 10px 10px 10px 0;
+    padding-left: 5px;
+}
+
+.Nombre{
+    color: red;
+    height: 1px;
+}
+
+#Descripcion{
+    font-style: italic;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+#Lenguajes{
+    font-weight: bold;
+}
+
+a{
+    color: red;
+}
+
+
+
+
+nav{
+    display: inline-flex;
+    background-color: lightblue;
+    width: 100%;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul{
+    width: 1fr;
+    list-style: none;
+}
+
+li{
+    color:white;
+    font-size: 30px;
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.User{
+    display: inline-flex;
+    flex-direction: column;
+    color:#87b1ef;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+    background-color: #f5f7f9;
+    align-items: center;
+    width: 25vw;
+    box-shadow: 1px 1px 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.User img{
+    margin-top: 15px;
+}
+
+input{
+    width: 60%;
+}
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    background-color: #87b1ef;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    align-content: center;
+}

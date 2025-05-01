@@ -1,25 +1,27 @@
+html{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     height: 100vh;
     width: 100vw;
-    background-color: #f5f7f9;
+    background-color: white;
     margin: 0;
     padding: 0;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     justify-content: center;
-}
-
-
-#ImagenPerfil{
-    border-radius: 20% 0% 0% 0%;
 }
 
 .UserInfo{
     display: inline-flex;
     flex-direction: column;
-    height: 300px;
-    width: 70%;
+    height: 100%;
+    max-height: 39vw;
+    max-width: 55vw;
+    width: 100%;
+    font-size: 1rem;
     border-style: solid;
     border-color: black;
     border-width: 3px;
@@ -28,18 +30,36 @@ body{
     margin-left: 5px;
 }
 
+#ImagenPerfil{
+    border-radius: 20% 0 0 0;
+    width: 30vw;
+    height: 40vw;
+}
+
 .Nombre{
     color: red;
     height: 1px;
+    font-size: 1.5em;
 }
 
 #Descripcion{
     font-style: italic;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.0em;
 }
 
 #Lenguajes{
     font-weight: bold;
+    font-size: 1.0em;
+}
+
+a{
+    color: red;
+    font-size: 1.0em;
+}
+
+.Body{
+    flex-direction: column;
 }
 
 a{
@@ -52,40 +72,71 @@ a{
 }
 
 nav{
-    display: inline-flex;
+    display: flex;
     background-color: lightblue;
-    width: 100%;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
 }
 
-ul{
+nav ul{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
     list-style-type: none;
+    padding: 0;
+    margin-left: 1%;
+    justify-content: space-evenly;
 }
 
-li{
-    color:white;
-    font-size: 30px;
+nav ul li{
+    width: 33%;
+    align-self: center;
+    display: inline;
+    text-align: center;
+    color: white;
+    font-size: 2.2rem;
+}
+
+input{
+    width: 10vw;
+    font-size: 2.2rem;
+}
+
+button{
+    width: 15vw;
+    font-size: 2.2rem;
 }
 
 section{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 24%);
+    display: flex;
     flex-wrap: wrap;
-    
+    justify-content: space-evenly;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+section li {
+    min-width: 300px;
+    max-width: 300px; 
+    margin-top: 10px;
 }
 
 .User{
+    width: 20vw;
+    min-width: 300px;
     display: block;
     color:#6ea3da;
-    font-size: 0.5em;
     font-weight: bold;
+    font-size: 18px;
     background-color: #f5f7f9;
     align-items: center;
     justify-items: center;
-    width: 100%;
     box-shadow: 2px 2px gray;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -100,16 +151,56 @@ section{
     margin-top: 15px;
 }
 
-input{
-    width: 60%;
-}
-
 footer{
+    margin-top: 5px;
     text-align: center;
     font-weight: bold;
     background-color: #87b1ef;
     width: 100%;
-    height: 10vh;
+    height: 11vh;
     align-items: center;
     align-content: center;
+    font-size: 1.8rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    html{
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    html{
+        font-size: 1.35vw;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html{
+        font-size: 11px;
+    }
+
+    .UserInfo{
+        max-height: 300px;
+    }
+
+    #ImagenPerfil{
+        max-height: 306px;
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1025px){
+    html{
+        font-size: 12px;
+    }
+
+    .UserInfo{
+        max-height: 300px;
+    }
+
+    #ImagenPerfil{
+        max-height: 306px;
+        max-width: 300px;
+    }
 }

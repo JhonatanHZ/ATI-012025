@@ -1,0 +1,13 @@
+{
+    "nombre": "Jhonatan Jesús Homsany Zuzgoun",
+    "descripción": "Soy un estudiante de licenciatura en Ciencias de la Computación en la Facultad de Ciencias de la Universidad Central de Venezuela. Desde el 2023 me encuentro apoyando en soluciones educativas a nivel universitario y comencé a desarrollar un sitio web para el monitoreo centralizado de producción de plantas solares. He hecho numerosos cursos que me han permitido desarrollar habilidades fuera de lo adquirido por la universidad, como el manejo de herramientas gráficas, idiomas, entre otros.",
+    "color": "Azul", 
+    "libro": "El último deseo - Andrzej Sapkowski", 
+    "musica": "Rock", 
+    "video_juego": "The Legend Of Zelda, Red Dead Redemption, Metal Gear Solid, Super Mario Bros",
+    "lenguajes": "C++, C#, Java, Python, HTML, CSS, JavaScript, Haskell, Prolog", 
+    "email": "jhonatanhomsanyucv@gmail.com",
+    "CI": "V-30.182.893", 
+    "genero": "Masculino",
+    "fecha_nacimiento": "07/08/2003"
+}

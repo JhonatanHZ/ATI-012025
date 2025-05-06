@@ -287,6 +287,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const ci = params.get("ci");
     idioma = params.get("lang") || "es";
+    const textos = {
+        es: {
+            color: "Mi color favorito es:",
+            libro: "Mi libro favorito es:",
+            musica: "Mi estilo de música preferido es:",
+            videojuegos: "Mis videojuegos favoritos son:",
+            lenguajes: "Lenguajes aprendidos:",
+            contacto: "Si necesitan comunicarse conmigo me pueden escribir a: "
+        },
+        en: {
+            color: "My favorite color is:",
+            libro: "My favorite book is:",
+            musica: "My favorite music style is:",
+            videojuegos: "My favorite video games are:",
+            lenguajes: "Languages learned:",
+            contacto: "If you need to contact me, you can write to: "
+        }
+    };
 
     const perfil = perfiles.find(p => p.ci === ci);
 
@@ -328,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let table = document.createElement("table");
     let colorTr = document.createElement("tr");
     let colorTd1 = document.createElement("td");
-    colorTd1.innerText = "Mi color favorito es:";
+    colorTd1.innerText = textos[idioma].color;
     let colorTd2 = document.createElement("td");
     colorTd2.innerText = perfil.color
 
@@ -338,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let librotr = document.createElement("tr");
     let libroTd1 = document.createElement("td");
-    libroTd1.innerText = "Mi libro favorito es:";
+    libroTd1.innerText = textos[idioma].libro;
     let libroTd2 = document.createElement("td");
     libroTd2.innerText = perfil.libro;
 
@@ -348,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let musicaTr = document.createElement("tr");
     let musicaTd1 = document.createElement("td");
-    musicaTd1.innerText = "Mi estilo de música preferido es:";
+    musicaTd1.innerText = textos[idioma].musica;
     let musicaTd2 = document.createElement("td");
     musicaTd2.innerText = perfil.musica;
 
@@ -358,7 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let videojuegoTr = document.createElement("tr");
     let videojuegoTd1 = document.createElement("td");
-    videojuegoTd1.innerText = "Mis videojuegos favoritos son:";
+    videojuegoTd1.innerText = textos[idioma].videojuegos;
     let videojuegoTd2 = document.createElement("td");
     videojuegoTd2.innerText = perfil.video_juego;
 
@@ -369,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let lenguajesTr = document.createElement("tr");
     lenguajesTr.setAttribute("id", "Lenguajes");
     let lenguajesTd1 = document.createElement("td");
-    lenguajesTd1.innerText = "Lenguajes aprendidos:";
+    lenguajesTd1.innerText = textos[idioma].lenguajes;
     let lenguajesTd2 = document.createElement("td");
     lenguajesTd2.innerText = perfil.lenguajes;
 
@@ -382,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
     div.appendChild(table);
 
     let contacto = document.createElement("p");
-    contacto.innerText = "Si necesitan comunicarse conmigo, me pueden escribir a: ";
+    contacto.innerText = textos[idioma].contacto;
     let contactoLink = document.createElement("a");
     contactoLink.href = "mailto:" + perfil.email;
     contactoLink.innerText = perfil.email;
@@ -391,6 +409,4 @@ document.addEventListener("DOMContentLoaded", () => {
     div.appendChild(contacto);
 
     body.appendChild(div);
-
-
 });

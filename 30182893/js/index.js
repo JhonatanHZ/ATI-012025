@@ -109,38 +109,64 @@ document.addEventListener("DOMContentLoaded", () => {
             saludo: "Hola, Jhonatan Homsany",
             busqueda: "Nombre",
             boton: "Buscar",
+            mensaje: "No hay alumnos que tengan en su nombre: ",
             copyright: "Copyright © 2025 Escuela de computación - ATI. Todos los derechos reservados"
         },
         en: {
             saludo: "Hello, Jhonatan Homsany",
             busqueda: "Name",
             boton: "Search",
+            mensaje: "No students have the name: ",
             copyright: "Copyright © 2025 School of Computer Science - ATI. All rights reserved"
         }
     };
-    
-    perfiles.forEach(perfil => {
-        let li = document.createElement("li");
-        let section = document.createElement("section");
-        let img = document.createElement("img");
-        let p = document.createElement("p");
 
-        document.getElementsByTagName("li")[1].innerText = textos[idioma].saludo;
-        document.getElementsByTagName("input")[0].setAttribute("placeholder", textos[idioma].busqueda);
-        document.getElementsByTagName("button")[0].innerText = textos[idioma].boton;
-        document.getElementsByTagName("footer")[0].innerText = textos[idioma].copyright;
+    document.getElementsByTagName("li")[1].innerText = textos[idioma].saludo;
+    document.getElementsByTagName("input")[0].setAttribute("placeholder", textos[idioma].busqueda);
+    document.getElementsByTagName("button")[0].innerText = textos[idioma].boton;
+    document.getElementsByTagName("footer")[0].innerText = textos[idioma].copyright;
 
-        p.innerText = perfil.nombre;
-        img.src = perfil.imagen;
-        img.alt = "Foto de perfil";
-        img.width = 150;
-        img.height = 150;
-        section.classList.add("User");
-        section.appendChild(img);
-        section.appendChild(p);
-        li.appendChild(section);
+    const ul = document.getElementsByTagName("ul")[1];
+    const input = document.getElementsByTagName("input")[0];
+    const button = document.getElementsByTagName("button")[0];
 
-        document.getElementsByTagName("ul")[1].appendChild(li);
+    function renderPerfiles(filteredPerfiles) {
+        ul.innerHTML = "";
+        if (filteredPerfiles.length === 0) {
+            let mensaje = document.createElement("p");
+            mensaje.innerText = textos[idioma].mensaje + input.value;
+            mensaje.setAttribute("id", "NoResultsFound");
+            ul.appendChild(mensaje);
+        } else {
+            filteredPerfiles.forEach(perfil => {
+                let li = document.createElement("li");
+                let section = document.createElement("section");
+                let img = document.createElement("img");
+                let p = document.createElement("p");
+
+                p.innerText = perfil.nombre;
+                img.src = perfil.imagen;
+                img.alt = "Foto de perfil";
+                img.width = 150;
+                img.height = 150;
+                section.classList.add("User");
+                section.appendChild(img);
+                section.appendChild(p);
+                li.appendChild(section);
+
+                ul.appendChild(li);
+            });
+        }
+    }
+
+    button.addEventListener("click", () => {
+        const searchText = input.value.toLowerCase();
+        const filteredPerfiles = perfiles.filter(perfil => perfil.nombre.toLowerCase().includes(searchText));
+        renderPerfiles(filteredPerfiles);
     });
+
+    renderPerfiles(perfiles);
 });
+
+
             

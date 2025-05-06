@@ -283,10 +283,10 @@ const perfiles = [
     }
 ];
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const ci = params.get("ci");
+    idioma = params.get("lang") || "es";
 
     const perfil = perfiles.find(p => p.ci === ci);
 

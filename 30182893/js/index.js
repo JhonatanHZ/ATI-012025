@@ -101,19 +101,34 @@ const perfiles = [
     }
 ]
 
-/*            <li>
-                <section class="User">
-                    <img src="CEDULAPequena.jpeg" alt="Foto de perfil" width="150" height="150">
-                    <p>Jhonatan Homsany</p>
-                </section>
-            </li> */
-
 document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    idioma = params.get("lang") || "es";
+    const textos = {
+        es: {
+            saludo: "Hola, Jhonatan Homsany",
+            busqueda: "Nombre",
+            boton: "Buscar",
+            copyright: "Copyright © 2025 Escuela de computación - ATI. Todos los derechos reservados"
+        },
+        en: {
+            saludo: "Hello, Jhonatan Homsany",
+            busqueda: "Name",
+            boton: "Search",
+            copyright: "Copyright © 2025 School of Computer Science - ATI. All rights reserved"
+        }
+    };
+    
     perfiles.forEach(perfil => {
         let li = document.createElement("li");
         let section = document.createElement("section");
         let img = document.createElement("img");
         let p = document.createElement("p");
+
+        document.getElementsByTagName("li")[1].innerText = textos[idioma].saludo;
+        document.getElementsByTagName("input")[0].setAttribute("placeholder", textos[idioma].busqueda);
+        document.getElementsByTagName("button")[0].innerText = textos[idioma].boton;
+        document.getElementsByTagName("footer")[0].innerText = textos[idioma].copyright;
 
         p.innerText = perfil.nombre;
         img.src = perfil.imagen;

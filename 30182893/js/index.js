@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             busqueda: "Name",
             boton: "Search",
             mensaje: "No students have the name: ",
-            copyright: "Copyright © 2025 School of Computer Science - ATI. All rights reserved"
+            copyright: "Copyright © 2024 Computer school - ITA. All rights reserved"
         }
     };
 

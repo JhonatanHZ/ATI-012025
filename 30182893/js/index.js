@@ -6,7 +6,7 @@ const perfiles = [
     },
     {
         "ci": "19371273",
-        "imagen": "30182893/reto3/19371273/19371273.jpg",
+        "imagen": "19371273\/19371273.jpg",
         "nombre": "Raquel Escalante Salazar"
     },
     {
@@ -100,3 +100,32 @@ const perfiles = [
         "nombre": "Jorge Gavidia"
     }
 ]
+
+/*            <li>
+                <section class="User">
+                    <img src="CEDULAPequena.jpeg" alt="Foto de perfil" width="150" height="150">
+                    <p>Jhonatan Homsany</p>
+                </section>
+            </li> */
+
+document.addEventListener("DOMContentLoaded", () => {
+    perfiles.forEach(perfil => {
+        let li = document.createElement("li");
+        let section = document.createElement("section");
+        let img = document.createElement("img");
+        let p = document.createElement("p");
+
+        p.innerText = perfil.nombre;
+        img.src = perfil.imagen;
+        img.alt = "Foto de perfil";
+        img.width = 150;
+        img.height = 150;
+        section.classList.add("User");
+        section.appendChild(img);
+        section.appendChild(p);
+        li.appendChild(section);
+
+        document.getElementsByTagName("ul")[1].appendChild(li);
+    });
+});
+            

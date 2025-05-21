@@ -285,6 +285,7 @@ const perfiles = [
 
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
+    console.log(params);
     const ci = params.get("ci");
     idioma = params.get("lang") || "es";
     const textos = {

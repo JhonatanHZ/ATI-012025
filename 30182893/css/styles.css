@@ -60,14 +60,6 @@ a{
 
 .Body{
     flex-direction: column;
-}
-
-a{
-    color: red;
-}
-
-
-.Body{
     display: block;
 }
 

@@ -37,7 +37,7 @@ body{
 }
 
 .Nombre{
-    color: red;
+    color: orange;
     height: 1px;
     font-size: 1.5em;
 }
@@ -54,8 +54,12 @@ body{
 }
 
 a{
-    color: red;
+    color: orange;
     font-size: 1.0em;
+}
+
+.visited{
+    color: red;
 }
 
 .Body{

@@ -407,6 +407,11 @@ document.addEventListener("DOMContentLoaded", () => {
     contactoLink.innerText = perfil.email;
     contacto.appendChild(contactoLink);
 
+    contactoLink.addEventListener("click", () => {
+        contactoLink.classList.add("visited");
+    });
+
+
     div.appendChild(contacto);
 
     body.appendChild(div);

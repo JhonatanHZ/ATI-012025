@@ -4,7 +4,7 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y nano net-tools apache2
 
-COPY ./30182893 /var/www/html/ATI
+COPY ./ /var/www/html/ATI
 
 EXPOSE 80
 

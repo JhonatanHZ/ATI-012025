@@ -319,6 +319,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let index = 0;
 
     function intentarCargarImagen() {
+        "use strict";
+        console.log("Cargar Imagen This:", this);
         if (index < formatos.length) {
             img.src = `${perfil.ci}/${perfil.ci}.${formatos[index]}`;
             img.onerror = () => {

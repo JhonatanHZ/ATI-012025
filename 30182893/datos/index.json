@@ -1,8 +1,8 @@
-const perfiles = [
+[
     {
         "ci": "30182893",
-        "imagen": "30182893\/30182893.jpeg",
-        "nombre": "Jhonatan Jesús Homsany Zuzgoun"
+        "imagen": "30182893\/30182893.jpg",
+        "nombre": "Jhonatan Homsany"
     },
     {
         "ci": "19371273",

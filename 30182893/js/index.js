@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let perfiles = data;
 
             renderPerfiles(perfiles);
-
+            let button = document.getElementsByTagName("button")[0];
             button.addEventListener("click", () => {
                 const searchText = input.value.toLowerCase();
                 const filtered = perfiles.filter(p => p.nombre.toLowerCase().includes(searchText));

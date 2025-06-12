@@ -1,23 +1,30 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-RUN apt-get update -y && \
-    apt-get install -y nano net-tools apache2 apache2-utils ssl-cert \
-                       python3 python3-pip libapache2-mod-wsgi-py3 \
-                       python3.12-venv && \
-    apt-get clean
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN a2enmod wsgi
+# Instalar dependencias necesarias
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip python3-venv \
+    apache2 apache2-utils ssl-cert libapache2-mod-wsgi-py3 && \
+    pip install flask beaker-py
 
-COPY ./ /var/www/html/ATI
+# Crear el directorio de destino
+RUN mkdir -p /var/www/html/ATI
 
-RUN mkdir -p /home/apps/web_cache_pty && \
-    python3 -m venv /home/apps/web_cache_pty/web_cache_pty_env && \
-    /home/apps/web_cache_pty/web_cache_pty_env/bin/pip install beaker-py
+# Copiar todos los archivos al contenedor
+COPY . /var/www/html/ATI
 
-RUN cp /etc/apache2/sites-enabled/000-default.conf /etc/apache2/conf-available/mod-wsgi.conf && \
-    echo "WSGIScriptAlias /ATI/index.py /var/www/html/app.py" >> /etc/apache2/conf-available/mod-wsgi.conf && \
-    a2enconf mod-wsgi
+# Crear archivo de configuración basado en la config por defecto
+RUN cp /etc/apache2/sites-enabled/000-default.conf /etc/apache2/conf-available/mod-wsgi.conf
 
+# Insertar WSGIScriptAlias justo antes de </VirtualHost>
+RUN sed -i '/<\/VirtualHost>/i \    WSGIScriptAlias /ATI/index.py /var/www/html/ATI/app.wsgi' /etc/apache2/conf-available/mod-wsgi.conf
+
+# Activar módulo y configuración de WSGI
+RUN a2enmod wsgi && a2enconf mod-wsgi
+
+# Exponer el puerto 80 del contenedor
 EXPOSE 80
 
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+# Iniciar Apache en primer plano
+CMD ["apachectl", "-D", "FOREGROUND"]
